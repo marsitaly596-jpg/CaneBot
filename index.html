@@ -3,63 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaneBot - Il tuo assistente</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CaneBot - Assistente Intelligente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        main {
+            padding: 60px 40px;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #555;
+            margin: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            background: #f5f7fa;
+            color: #666;
+            text-align: center;
+            padding: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>🐕 CaneBot</h1>
-            <p class="tagline">Il tuo assistente intelligente</p>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1><span class="emoji">🐕</span>CaneBot</h1>
+            <p class="tagline">Il tuo assistente intelligente per qualsiasi esigenza</p>
+        </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
+        <main>
+            <section class="content-section">
                 <h2>Benvenuto su CaneBot</h2>
-                <p>Scopri come possiamo aiutarti con i nostri servizi</p>
-            </div>
-        </section>
+                <p>Scopri la potenza di un assistente intelligente progettato per semplificare la tua vita. CaneBot è qui per aiutarti in ogni momento, fornendo risposte rapide, accurate e personalizzate.</p>
+            </section>
 
-        <section class="features">
-            <div class="container">
-                <h2>Caratteristiche</h2>
-                <div class="feature-grid">
+            <section class="content-section">
+                <h2>Le Nostre Caratteristiche</h2>
+                <div class="features-grid">
                     <div class="feature-card">
-                        <h3>⚡ Veloce</h3>
-                        <p>Risposte istantanee a qualsiasi domanda</p>
+                        <h3><span class="emoji">⚡</span>Velocissimo</h3>
+                        <p>Risposte istantanee grazie alla nostra tecnologia avanzata di elaborazione.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>🔒 Sicuro</h3>
-                        <p>I tuoi dati sono sempre protetti</p>
+                        <h3><span class="emoji">🔒</span>Sicuro</h3>
+                        <p>I tuoi dati sono sempre protetti con la crittografia di livello enterprise.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>📱 Accessibile</h3>
-                        <p>Funziona su tutti i dispositivi</p>
+                        <h3><span class="emoji">🌍</span>Multilingue</h3>
+                        <p>Supporto per oltre 50 lingue in tutto il mondo.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>🎯 Preciso</h3>
-                        <p>Risultati accurati e affidabili</p>
+                        <h3><span class="emoji">📱</span>Accessible</h3>
+                        <p>Funziona perfettamente su desktop, tablet e smartphone.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="emoji">🎯</span>Preciso</h3>
+                        <p>Algoritmi sofisticati garantiscono risultati accurati e affidabili.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="emoji">💡</span>Innovativo</h3>
+                        <p>Tecnologia all'avanguardia che si evolve continuamente.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="cta">
-            <div class="container">
-                <h2>Inizia Ora</h2>
-                <button class="btn">Scopri di più</button>
-            </div>
-        </section>
-    </main>
+            <section class="content-section">
+                <h2>Inizia Oggi</h2>
+                <p>Non aspettare oltre! Unisciti a migliaia di utenti soddisfatti che hanno già scoperto i benefici di CaneBot. La nostra piattaforma è pronta per trasformare il modo in cui lavori.</p>
+                <button class="cta-button" onclick="alert('Grazie per l\'interesse! 🎉')">Accedi Ora</button>
+            </section>
+        </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 CaneBot. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        <footer>
+            <p>&copy; 2026 CaneBot. Tutti i diritti riservati. | Creato con ❤️ per te</p>
+        </footer>
+    </div>
 </body>
 </html>
